@@ -53,15 +53,15 @@ app.get('/register',(req,res)=>{
 app.get('/contact',(req,res)=>{
     res.status(200).render('contact.pug');
 })
-app.post('/register',(req,res)=>{
+app.post('/register',async (req,res)=>{
     const myData = new AboutStudent(req.body);
     try{ 
-        myData.save();
+        await myData.save();
         res.status(200).render('successfull.pug');
     }catch(error){
         res.status(500).send(error);
     }
 })
 app.listen(port,()=>{
-    console.log("This Page is Running on port 8000");
+    console.log("This Page is Running");
 })
