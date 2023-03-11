@@ -53,10 +53,10 @@ app.get('/register',(req,res)=>{
 app.get('/contact',(req,res)=>{
     res.status(200).render('contact.pug');
 })
-app.post('/register',async (req,res)=>{
+app.post('/register',(req,res)=>{
     const myData = new AboutStudent(req.body);
     try{ 
-        await myData.save();
+        myData.save();
         res.status(200).render('successfull.pug');
     }catch(error){
         res.status(500).send(error);
