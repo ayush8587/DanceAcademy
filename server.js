@@ -26,7 +26,7 @@ const StudentSchema = new mongoose.Schema({
 
 const AboutStudent = mongoose.model('AboutStudent', StudentSchema);
 
-const port=process.enc.PORT || 8000;
+const port=process.env.PORT || 8000;
 
 app.use('/static', express.static('static'));
 app.use(express.urlencoded());
