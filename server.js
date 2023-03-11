@@ -4,12 +4,19 @@ const fs = require('fs');
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+const username = "kumarayush9718";
+const password = "aYush8076";
+const cluster = "cluster0.zmrvmku";
+const dbname = "Registration";
 
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/registration').then(()=>{
-    console.log("Connected Successfully");
+  await mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`);
+  const db = mongoose.connection;
+  db.on("error",console.error.bind(console,"connection error: "));
+  db.once("open",function(){
+    console.log("Connected successfully");
   });
 }
 
@@ -48,11 +55,12 @@ app.get('/contact',(req,res)=>{
 })
 app.post('/register',(req,res)=>{
     const myData = new AboutStudent(req.body);
-    myData.save().then(()=>{
+    try{ 
+        myData.save();
         res.status(200).render('successfull.pug');
-    }).catch(()=>{
-        res.status(400).send("Server Down, Please Try Again");
-    })
+    }catch(error){
+        res.status(500).send(error);
+    }
 })
 app.listen(port,()=>{
     console.log("This Page is Running on port 8000");
