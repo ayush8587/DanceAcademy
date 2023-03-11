@@ -1,0 +1,59 @@
+extends base.pug
+
+block scripts 
+    script(src="../static/index.js") 
+
+block style 
+    style 
+        include ../static/style.css 
+
+block content 
+    main(class="register")
+        h1 Application Form
+        form(action="/register", method="post" class="application-form")
+            label(for="name" class="name") Name 
+            br 
+            input(type="text" name="name" id="name" placeholder="Enter your Name")/
+            br
+            label(for="email" class="email") E-mail 
+            br
+            input(type="email" name="email" id="email" placeholder="ex: myname@example.com")/
+            br
+            label(for="phone" class="phone") Phone Number 
+            br
+            input(type="phone" name="phone" id="phone" placeholder="Enter your Phone Number")/
+            br
+            label(for="gender" class="gender") Gender 
+            br
+            input(type="radio" name="gender" id="male" value="male")/ Male
+            input(type="radio" name="gender" id="female" value="female")/ Female
+            br
+            label(for="address" class="address") Address 
+            br
+            input(type="text" name="street-address" id="street-address" placeholder="Street Address")/
+            input(type="text" name="street-address2" id="street-address2" placeholder="Street Address Line 2")/
+            br
+            input(type="text" name="city" id="city" placeholder="City")/
+            label(for="state" class="state")
+            select(name="state" id="state")
+                option(value="Uttar-Pradesh") Uttar Pradesh 
+                option(value="Bihar") Bihar 
+                option(value="Tamil-Nadu") Tamil Nadu 
+                option(value="Maharashtra") Maharashtra 
+                option(value="Karnatka") Karnatka
+            br
+            label(for="dance" class="dance") Type of Dance
+            br
+            input(type="radio" name="dance" value="BharatNatyam")/ Bharatnatyam
+            br
+            input(type="radio" name="dance" value="Hip-Hop")/ Hip-Hop
+            br
+            input(type="radio" name="dance" value="Ballet")/ Ballet
+            br
+            input(type="radio" name="dance" value="Kathakali")/ Kathakali 
+            br
+            label(for="comments" class="comments") Comments 
+            br
+            textarea(name="comments", cols="50", rows="10") 
+            br
+            button(type="submit") Submit 

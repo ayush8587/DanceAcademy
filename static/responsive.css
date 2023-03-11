@@ -1,0 +1,8 @@
+@media screen and (max-width: 1200px) {
+    body{
+        background-color: aquamarine;
+    }
+    .navbar{
+        width: 100vw;
+    }
+}

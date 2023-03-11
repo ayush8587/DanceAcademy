@@ -1,0 +1,13 @@
+extends base.pug
+
+block scripts 
+    script(src="/static/index.js") 
+
+block style 
+    style 
+        include ../static/style.css 
+
+block content 
+    main#successfull
+        h1 Registerd Successfully 
+        a(href="/home" class="go-back") Go Back

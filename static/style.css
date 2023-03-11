@@ -1,0 +1,229 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    background-color: black;
+}
+.navbar ul{
+    overflow: auto;
+}
+.navbar li{
+    float:left;
+    list-style: none; 
+    margin: 13px 20px;
+}
+.navbar li img{
+    filter: invert(1);
+    cursor: pointer;
+}
+.navbar li a,img{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+}
+footer{
+    background-color: black;
+    height: 40px;
+}
+footer p{
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.container{
+    height: 350px;
+}
+.container h1{
+    text-align: center;
+}
+.sub-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.teachers{
+    /* background-color: aquamarine; */
+    height: 400px;
+}
+.sponsors,.teachers h1{
+    text-align: center;
+    padding-top: 5px;
+}
+.sponsors-image{
+    display: flex;
+    justify-content: center;
+}
+.sponsors-image img{
+    margin-right: 50px;
+    max-width: 100px;
+    max-height: 100px;
+}
+.card{
+    float: left;
+    width: 33.3%;
+    position: relative;
+    cursor: pointer;
+}
+.card .face{
+    width: 300px;
+    height: 150px;
+    transition: 0.5s;
+}
+.card .face.face1{
+    position: relative;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(50px);
+}
+.card:hover .face.face1{
+    transform: translateY(0);
+}
+.card .face.face1 .content{
+    transition: 0.5s;
+}
+.card:hover .face.face1 .content{
+    opacity: 1;
+}
+.card .face.face1 .content img{
+    max-width: 100px;
+    max-height: 100px;
+}
+.card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.card .face.face2{
+    position: relative;
+    background: #ff0057;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transform: translateY(-100px);
+}
+.card:hover .face.face2{
+    transform: translateY(0);
+}
+.card .face.face2 p{
+    margin: 0;
+    padding: 0;
+}
+.card .face.face2 .content a{
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    padding: 5px;
+    border: 1px solid #333;
+    color: white;
+    background: #473d3d;
+    border-radius: 20px;
+}
+.card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+.row{
+    display: flex;
+}
+.teacher{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+.teacher-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (max-width: 1200px) {
+    .teacher,.card,.sponsors-image img{
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+}
+.teacher-image img{
+    max-width: 100px;
+    max-height: 100px;
+}
+.about-teacher{
+    padding: 20px;
+
+}
+.about-teacher h3{
+    text-align: center;
+}
+.about-teacher::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.contact-teacher{
+    display: flex;
+    justify-content: space-evenly;
+}
+.application-form{
+    height: 100%;
+    width: 500px;
+    margin: 0px auto;
+}
+.application-form label{
+    font-size: large;
+    font-weight: bold;
+}
+.register h1{
+    text-align: center;
+}
+#street-address, #city{
+    margin-right: 9px;
+}
+#street-address, #street-address2{
+    margin-bottom: 9px;
+}
+.application-form input,textarea{
+    margin: 10px;
+    border-radius: 5px;
+}
+button{
+    border-radius: 10px;
+    background-color: #ff0057;
+    font-size: large;
+    border-style: none;
+    font-weight: bolder;
+    font-family: monospace;
+    cursor: pointer;
+}
+button:hover{
+    color: white;
+    background-color: #473d3d;
+}
+.register{
+    background-image: linear-gradient(to bottom right, lightskyblue, purple);
+}
+.go-back{
+    text-decoration: none;
+    color: black;
+    background-color: #333333ab;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.go-back:hover{
+    color:#fff;
+    background-color: #333;
+}
+#successfull{
+    height: 86.5vh;
+}

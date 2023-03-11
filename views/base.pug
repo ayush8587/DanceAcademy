@@ -1,0 +1,21 @@
+doctype doctype html
+html
+  head
+    title Dance Palace
+    block link
+      link(href="../static/favicon.png" rel="icon" type="image/x-icon")
+      //- link(rel="stylesheet" media="screen and (max-width: 1200px)" href="../static/responsive.css")
+    block scripts 
+    block style 
+  body
+    block head 
+        header
+            nav(class="navbar")
+                ul
+                    li: img(src="../static/favicon.png", alt="logo", width="26px", height="26px")
+                    li: a(href="/") Home 
+                    li: a(href="/register") Register
+    block content
+    block foot
+        footer 
+            p Copyright 2023 | All Rights Reserved © AyushKumar
